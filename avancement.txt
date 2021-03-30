@@ -1,0 +1,18 @@
+Navitia :
+	comprendre le fonctionnement de l'API
+	récupérer la liste des ligne de transport dans l'ile de france fr-idf (coverage)
+	certaines lignes sont manquante (a voir avec l'API de la ratp pour corriger le problème)
+
+	difficulté a changer de page pour les réponses de l'api, obligation de faire une deuxième requête
+
+	Téléchargement de la liste des lignes (toutes les pages)
+
+	traitement des données pour récupérer les ID des lignes pour faire des demandes spécifiques à une ligne sans avoir a refaire des demandes aux serveurs pour récupérer la ligne et son ID
+
+
+Google API:
+	rajouter le compte de facturation
+	activation de la Direction API -> pour avoir la distance, temps, direction
+
+	test sur l'API
+	Avancement dans le traitement des données renvoyées (sous forme d'une liste a retransformer en JSON) pour extraire et renvoyer les parties intéressantes
