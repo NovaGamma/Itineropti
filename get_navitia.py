@@ -3,7 +3,6 @@ import requests
 import json
 import navitia_wrapper
 
-
 def save(data,name = ''):
     if name == '':
         with open("Data/data.json",'w') as file:
