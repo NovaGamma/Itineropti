@@ -2,19 +2,17 @@
 #include "point.c"
 
 Point** getPoints(char path[]){
-
   FILE* file = fopen(path,"r");
   int nPoints;
   fscanf(file,"%d\n",&nPoints);
   Point** array = (Point**)malloc(sizeof(Point*)*nPoints);
   for(int i = 0; i < nPoints; i++){
-    char adress[100];
+    char* adress = (char*)malloc(sizeof(char)*100);
     fgets(adress,100,(FILE*)file);
     float lon,lat;
     fscanf(file,"%f %f\n",&lon,&lat);
     Point* point = createPoint(adress,lon,lat);
     array[i] = point;
-    displayPoint(point);
   }
   return array;
 }
