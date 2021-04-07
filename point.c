@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-Point* createPoint(char name[],float lon, float lat){
+Point* createPoint(char name[100],float lon, float lat){
   Point* point = (Point*)malloc(sizeof(Point));
   point->name = name;
   point->longitude = lon;
@@ -11,6 +11,6 @@ Point* createPoint(char name[],float lon, float lat){
 }
 
 void displayPoint(Point* point){
-  printf("%s\n",point->name);
+  printf("%s",point->name);
   printf("lon : %f | lat : %f\n",point->longitude,point->latitude);
 }
