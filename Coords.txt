@@ -1,0 +1,15 @@
+7
+13 allée Berlioz 94800 Villejuif France
+2.362711 48.790944
+90 avenue du Colonel Fabien 94400 Vitry-Sur-Seine
+2.377315 48.786168
+102 avenue du colonel Fabien 94400 Vitry-sur-Seine
+2.376862 48.786734
+4 rue Isabeau de Bavières 94240 L'Haÿ-Les-Roses
+2.337589 48.778446
+40 rue Antoine de St Exupéry 94320 Thiais
+2.387997 48.772354
+290 rue de la cote st Jean Villainnes-Sur-Seine 78670
+1.995182 48.93751
+13 Rue Général Pershing Versailles 78000
+2.150235 48.816862
