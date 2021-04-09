@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "point.c"
+#include "vol_doiseau.c"
 
 Point** getPoints(char path[]){
   FILE* file = fopen(path,"r");
@@ -19,9 +20,11 @@ Point** getPoints(char path[]){
 
 
 int main(){
-  Point** array = getPoints("Coords.txt");
+  Point** array = getPoints("Set/Coords.txt");
   for(int i = 0;i<7;i++){
     displayPoint(array[i]);
   }
+  float x = distance(array[0]->latitude, array[0]->longitude, array[3]->latitude, array[3]->longitude);
+  printf("%f\n", x);
   return 0;
 }

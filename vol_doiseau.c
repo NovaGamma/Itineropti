@@ -15,15 +15,11 @@ float distance(float latitude1, float longitude1, float latitude2, float longitu
     longitude1*=(M_PI/180);
     float a = sinf((latitude1-latitude2)/2);
     a *=a;
-    printf("%f \n", a);
     float b = sinf((longitude1-longitude2)/2);
     b*=b;
-    printf("%f \n", b);
     b*= cosf(latitude2)*cosf(latitude1);
     a+=b;
     float c = 2*atanf((sqrtf(a)/sqrtf(1-a)));
     c*=6731;
-    printf("%f \n", c);
     return c;
 }
-
