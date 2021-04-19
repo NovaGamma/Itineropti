@@ -23,3 +23,26 @@ float distance(float latitude1, float longitude1, float latitude2, float longitu
     c*=6731;
     return c;
 }
+
+list make_point_list(Point** array){
+  int n = getSize();
+  list l = malloc(sizeof(node));
+  list l1 = l;
+  for(int i = 0; i<n; i++){
+    if(i<n-1){
+      l1->val = array[i];
+      l1->next = malloc(sizeof(node));
+      l1 = l1->next;
+    }
+    else{
+      l1->val = array[i];
+    }
+  }
+  return l;
+}
+int getSize(){
+  FILE* file = fopen("Set/Coords.txt", "r");
+  int size;
+  fscanf(file,"%d\n",&size);
+  return size;
+}

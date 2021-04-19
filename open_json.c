@@ -19,12 +19,16 @@ Point** getPoints(char path[]){
 }
 
 
+
+
 int main(){
   Point** array = getPoints("Set/Coords.txt");
   for(int i = 0;i<7;i++){
     displayPoint(array[i]);
   }
-  float x = distance(array[0]->latitude, array[0]->longitude, array[3]->latitude, array[3]->longitude);
-  printf("%f\n", x);
+  list l= malloc(sizeof(node));
+  l = make_point_list(array);
+  printf("%s\n", l->val->name );
+  printf("%s\n", l->next->val->name);
   return 0;
 }
