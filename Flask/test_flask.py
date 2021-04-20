@@ -10,6 +10,10 @@ def hello_world(nPoint):
         json.dump(array,file)
     return f'The number of point is {nPoint}'
 
+@app.route('/adress/<str:adresses>')
+def get_adresses(adresses):
+    pass
+
 @app.route('/open')
 def open_file():
     with open("test.json",'r') as file:
