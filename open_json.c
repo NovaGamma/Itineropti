@@ -23,12 +23,16 @@ Point** getPoints(char path[]){
 
 int main(){
   Point** array = getPoints("Set/Coords.txt");
-  for(int i = 0;i<7;i++){
+  for(int i = 0; i<7; i++){
     displayPoint(array[i]);
   }
+  printf("\n" );
   list l= malloc(sizeof(node));
   l = make_point_list(array);
-  printf("%s\n", l->val->name );
-  printf("%s\n", l->next->val->name);
+  list l2 = ant_path(l);
+  while (l2!=NULL) {
+    displayPoint(l2->val);
+    l2 = l2->next;
+  }
   return 0;
 }
