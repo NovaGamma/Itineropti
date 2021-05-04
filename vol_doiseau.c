@@ -32,19 +32,17 @@ list make_point_list(Point** array){
   int n = getSize();
   list l = malloc(sizeof(node));
   list l1 = l;
-  for(int i = 0; i<n; i++){
-    if(i<n-1){
+  int i;
+  for(i = 0; i<n-1; i++){
       l1->val = array[i];
       l1->next = malloc(sizeof(node));
       l1 = l1->next;
-    }
-    else{
-      l1->val = array[i];
-      l1->next = NULL;
-    }
   }
+  l1->val = array[i];
+  l1->next = NULL;
   return l;
 }
+
 int getSize(){
   FILE* file = fopen("Set/Coords.txt", "r");
   int size;
