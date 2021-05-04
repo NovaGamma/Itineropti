@@ -8,7 +8,11 @@
 #include <stdlib.h>
 
 
-float distance(float latitude1, float longitude1, float latitude2, float longitude2){
+float distance(Point* v1, Point* v2){
+    float latitude1 = v1->latitude;
+    float latitude2 = v2->latitude;
+    float longitude1 = v1->longitude;
+    float longitude2 = v2->longitude;
     latitude1*=(M_PI/180);
     latitude2*=(M_PI/180);
     longitude2*=(M_PI/180);
@@ -36,6 +40,7 @@ list make_point_list(Point** array){
     }
     else{
       l1->val = array[i];
+      l1->next = NULL;
     }
   }
   return l;
@@ -45,4 +50,47 @@ int getSize(){
   int size;
   fscanf(file,"%d\n",&size);
   return size;
+}
+
+
+list pop(char name[100], list* l){
+  list list1 = *(l);
+  if(list1->val->name == name){
+    printf("%d\n", l);
+    *l = (*l)->next;
+    l = &((*l)->next);
+    return list1;
+  }
+  else{
+    while(list1!=NULL){
+      if(list1->next->val->name == name){
+        list list2 = list1->next;
+        list1->next = list2->next;
+        return list2;
+      }
+      else{
+        list1 = list1->next;
+      }
+    }
+  }
+}
+
+
+list ant_path(list l){
+  list l1 = pop(l->val->name, &l);
+  list List = l1;
+  while(l!=NULL){
+    list l2 = l;
+    list l3 = l2;
+    while(l2!=NULL){
+      if(distance(l1->val, l2->val)<=distance(l3->val, l1->val)){
+        l3 = l2;
+      }
+      l2 = l2->next;
+    }
+    pop(l3->val->name, &l);
+    l1->next = l3;
+    l1 = l1->next;
+  }
+  return List;
 }
