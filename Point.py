@@ -14,9 +14,6 @@ class Point():
     def __str__(self):
         return f"{self.name}\nlon : {self.longitude} | lat : {self.lattitude}\n"
 
-    def __repr__(self):
-        return f"{self.name}\nlon : {self.longitude} | lat : {self.lattitude}\n"
-
 def distance(v1,v2):
     lat1 = v1.lattitude * math.pi/180
     lat2 = v2.lattitude * math.pi/180
@@ -53,6 +50,6 @@ def main():
     for key,v in data.items():
         points.append(Point(key,v[0],v[1]))
     new_list = ant_path(points)
-    
+
 if __name__ == '__main__':
     main()
