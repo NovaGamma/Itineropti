@@ -1,1 +1,1 @@
-web: gunicorn app:itineroptiapp
+web: gunicorn itineroptiapp:app
