@@ -12,7 +12,7 @@ def hello_world(nPoint):
         json.dump(array,file)
     return f'The number of point is {nPoint}'
 
-@app.route('/address/<str:addresses>')
+@app.route('/address/<string:addresses>')
 def itineropty(addresses):
     adresses = addresses.split('|')
     coords = get_coords(points = adresses)

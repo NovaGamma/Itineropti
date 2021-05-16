@@ -45,7 +45,7 @@ def ant_path(l):
     return new_list
 
 def main(data = ""):
-    if data == ""
+    if data == "":
         with open("Set/Coords.json",'r') as file:
             data = json.load(file)
     points = []
