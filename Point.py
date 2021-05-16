@@ -1,5 +1,6 @@
 import math
 import json
+import time
 
 class Point():
     def __init__(self,name,lon,lat):
@@ -43,13 +44,15 @@ def ant_path(l):
         l.remove(min)
     return new_list
 
-def main():
-    with open("Set/Coords.json",'r') as file:
-        data = json.load(file)
+def main(data = ""):
+    if data == ""
+        with open("Set/Coords.json",'r') as file:
+            data = json.load(file)
     points = []
     for key,v in data.items():
         points.append(Point(key,v[0],v[1]))
     new_list = ant_path(points)
+    return new_list
 
 if __name__ == '__main__':
     main()

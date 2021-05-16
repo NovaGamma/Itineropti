@@ -1,5 +1,7 @@
 from flask import Flask
 import json
+import Point
+from get_coord import get_coords
 
 app = Flask(__name__)
 
@@ -9,6 +11,16 @@ def hello_world(nPoint):
     with open("test.json",'w') as file:
         json.dump(array,file)
     return f'The number of point is {nPoint}'
+
+@app.route('/address/<str:addresses>')
+def itineropty(addresses):
+    adresses = addresses.split('|')
+    coords = get_coords(points = adresses)
+    opti = Point.main(coords)
+    text = ""
+    for point in opti:
+        text += point + "|"
+    return text[:-1]
 
 @app.route('/open')
 def open_file():

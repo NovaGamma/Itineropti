@@ -12,12 +12,12 @@ def get_point(path):
         Points = json.load(file)
     return Points
 
-if __name__ == '__main__':
+def get_coords(path = "",points = ""):
     url = "https://api-adresse.data.gouv.fr/search/?q="
-    path = "adresses set"
-    Points = get_point(path)
+    if points == "":
+        points = get_point(path)
     coords = {}
-    for point in Points:
+    for point in points:
         full_url = url + parse_url(point)
         with requests.get(full_url) as r:
             raw_data = json.loads(r.text)
@@ -27,3 +27,9 @@ if __name__ == '__main__':
 
     with open("Coords.json",'w') as file:
         json.dump(coords,file)
+    return coords
+
+
+if __name__ == '__main__':
+    path = "adresses set"
+    get_coords(path)
