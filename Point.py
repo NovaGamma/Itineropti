@@ -13,7 +13,7 @@ class Point():
         print(f"lon : {self.longitude} | lat : {self.lattitude}\n")
 
     def __str__(self):
-        return f"{self.name}\nlon : {self.longitude} | lat : {self.lattitude}\n"
+        return f"{self.name}"
 
 def distance(v1,v2):
     lat1 = v1.lattitude * math.pi/180

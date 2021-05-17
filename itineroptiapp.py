@@ -19,7 +19,7 @@ def itineropty(addresses):
     opti = Point.main(coords)
     text = ""
     for point in opti:
-        text += point + "|"
+        text += str(point) + "|"
     return text[:-1]
 
 @app.route('/open')
