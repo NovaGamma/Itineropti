@@ -1,6 +1,7 @@
 import requests
 
-url = "https://itineroptiapp.herokuapp.com/address/4 rue Isabeau de Bavières 94240 L'Haÿ-Les-Roses|40 rue Antoine de St Exupéry 94320 Thiais|290 rue de la cote st Jean Villainnes-Sur-Seine 78670|13 Rue Général Pershing Versailles 78000"
-
+#base_url = "https://itineroptiapp.herokuapp.com/address/"
+base_url = "http://127.0.0.1:5000/address/"
+url = base_url + "13 rue général Pershing Versailles|181 rue Alésia Paris"
 with requests.get(url) as r:
     print(r.text)

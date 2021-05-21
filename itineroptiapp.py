@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 import json
 import Point
 from get_coord import get_coords
@@ -17,10 +17,8 @@ def itineropty(addresses):
     adresses = addresses.split('|')
     coords = get_coords(points = adresses)
     opti = Point.main(coords)
-    text = ""
-    for point in opti:
-        text += str(point) + "|"
-    return text[:-1]
+    answer = [{'longitude':point.longitude,'lattitude':point.lattitude} for point in opti]
+    return jsonify(data = answer)
 
 @app.route('/open')
 def open_file():
@@ -34,4 +32,4 @@ def index():
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000,ssl_context='adhoc')
+    app.run(threaded=True, port=5000)
